@@ -81,7 +81,7 @@ public class Show extends javax.swing.JFrame {
         cadastro.setVisible(true);
     }//GEN-LAST:event_jBtnCadastroActionPerformed
 
-    /**
+    /** 
      * @param args the command line arguments
      */
     public static void main(String args[]) {
