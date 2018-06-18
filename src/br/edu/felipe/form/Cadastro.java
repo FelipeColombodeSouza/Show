@@ -5,6 +5,8 @@
  */
 package br.edu.felipe.form;
 
+import br.com.felipe.singleton.SCandidato;
+import br.com.felipe.singleton.SJurado;
 import br.edu.felipe.objeto.Candidato;
 import br.edu.felipe.objeto.Jurado;
 import java.text.ParseException;
@@ -238,6 +240,7 @@ public class Cadastro extends javax.swing.JFrame {
                 Candidato c = new Candidato(jTfNacionalidade.getText(), jTfProfissao.getText(),
                         jTfNome.getText(), Integer.parseInt(jTfId.getText()), sdf.parse(jTfDataNascimento.getText()),
                         jTfSexo.getText().toUpperCase().charAt(0));
+                SCandidato.getInstance().getCandidatos().add(c);
             } catch (ParseException ex) {
                 Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -245,19 +248,20 @@ public class Cadastro extends javax.swing.JFrame {
 
             try {
                 Jurado j = new Jurado(jTfEspecialidade.getText(), jTfNome.getText(), Integer.parseInt(jTfId.getText()), sdf.parse(jTfDataNascimento.getText()), jTfSexo.getText().toUpperCase().charAt(0));
+                SJurado.getInstance().getJurados().add(j);
             } catch (ParseException ex) {
                 Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Favor, inserir uma das opções.");
         }
+ 
 
-
+        
     }//GEN-LAST:event_jBtnCadastroActionPerformed
 
     private void jBtVoltarCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtVoltarCadActionPerformed
-Show show = new Show();
-show.setVisible(true);
+        setVisible(false);
 
     }//GEN-LAST:event_jBtVoltarCadActionPerformed
 

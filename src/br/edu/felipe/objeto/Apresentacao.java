@@ -13,21 +13,19 @@ public class Apresentacao {
 
     private Boolean autoral;
     private Boolean adaptado;
-    private float media;
     private Candidato candidato;
     private Musica musica;
 
-    public Apresentacao(Boolean autoral, Boolean adaptado, float media, Candidato candidato, Musica musica) {
+    public Apresentacao(Boolean autoral, Boolean adaptado, Candidato candidato, Musica musica) {
         this.autoral = autoral;
         this.adaptado = adaptado;
-        this.media = media;
         this.candidato = candidato;
         this.musica = musica;
     }
 
     @Override
     public String toString() {
-        return "Apresentacao{" + "autoral=" + autoral + ", adaptado=" + adaptado + ", media=" + media + ", candidato=" + candidato + ", musica=" + musica + '}';
+        return "Apresentacao{" + "autoral=" + autoral + ", adaptado=" + adaptado  + ", candidato=" + candidato + ", musica=" + musica + '}';
     }
 
     public Boolean getAutoral() {
@@ -46,13 +44,7 @@ public class Apresentacao {
         this.adaptado = adaptado;
     }
 
-    public float getMedia() {
-        return media;
-    }
 
-    public void setMedia(float media) {
-        this.media = media;
-    }
 
     public Candidato getCandidato() {
         return candidato;
