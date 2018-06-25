@@ -62,6 +62,12 @@ public class Avaliacao {
         this.mediaGeral = mediaGeral;
     }
 
-    
+     public double calcularMedia(){
+        float somaTotal= 0; 
+        for (Requisito nota : requisitos) {
+            somaTotal+= nota.getNota();
+        }
+        return somaTotal/requisitos.size();
+    }
     
 }

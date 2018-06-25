@@ -140,6 +140,7 @@ public class FrmRequisito extends javax.swing.JFrame {
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
 Requisito req = new Requisito(TxtReq.getText(), Float.parseFloat(TxtNotaReq.getText()), TxtStatusReq.getText().charAt(0));
 SRequisito.getInstance().getRequisito().add(req);
+setVisible(false);
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**

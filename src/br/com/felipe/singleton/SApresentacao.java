@@ -6,7 +6,6 @@
 package br.com.felipe.singleton;
 
 import br.edu.felipe.objeto.Apresentacao;
-import br.edu.felipe.objeto.Candidato;
 import java.util.ArrayList;
 import java.util.List;
 

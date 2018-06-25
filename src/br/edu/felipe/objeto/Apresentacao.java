@@ -23,11 +23,13 @@ public class Apresentacao {
         this.musica = musica;
     }
 
+    
     @Override
     public String toString() {
-        return "Apresentacao{" + "autoral=" + autoral + ", adaptado=" + adaptado  + ", candidato=" + candidato + ", musica=" + musica + '}';
+        return "Dados da apresentação: \n" + "autoral- " + autoral + " | adaptado-" + adaptado  + "\ncandidato=" + candidato.getNome() + "\nmusica" + musica.getNome();
     }
-
+   
+    
     public Boolean getAutoral() {
         return autoral;
     }

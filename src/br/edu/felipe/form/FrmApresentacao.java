@@ -55,11 +55,10 @@ public class FrmApresentacao extends javax.swing.JFrame {
         BtnAdapN = new javax.swing.JRadioButton();
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        TxtNumeroCandidato = new javax.swing.JTextField();
         BtnSalvarApresent = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jBtnCandidato1 = new javax.swing.JButton();
+        BtnAvalia = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,7 +119,7 @@ public class FrmApresentacao extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TxtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel7.setText("Autoral");
@@ -138,14 +137,12 @@ public class FrmApresentacao extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel9.setText("Candidato");
 
-        jButton1.setText("Mostrar Lista");
+        jButton1.setText("Novo Candidato");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jLabel10.setText("Número do candidato");
 
         BtnSalvarApresent.setText("Salvar");
         BtnSalvarApresent.addActionListener(new java.awt.event.ActionListener() {
@@ -161,8 +158,17 @@ public class FrmApresentacao extends javax.swing.JFrame {
             }
         });
 
-        jBtnCandidato1.setText("Avaliação");
-        jBtnCandidato1.setName(""); // NOI18N
+        BtnAvalia.setText("Avaliação");
+        BtnAvalia.setName(""); // NOI18N
+        BtnAvalia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAvaliaActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel11.setText("jLabel11");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,26 +183,26 @@ public class FrmApresentacao extends javax.swing.JFrame {
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel9)
-                                .addComponent(jButton1)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(TxtNumeroCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(BtnAutoS)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(BtnAutoN))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BtnAdapS)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(BtnAdapN))
-                            .addComponent(jLabel7))
-                        .addGap(0, 40, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jButton1)
+                                    .addComponent(jLabel8)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(BtnAutoS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(BtnAutoN))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(BtnAdapS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(BtnAdapN))
+                                    .addComponent(jLabel7))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BtnSalvarApresent)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jBtnCandidato1)
+                        .addComponent(BtnAvalia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2)))
                 .addContainerGap())
@@ -205,20 +211,16 @@ public class FrmApresentacao extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TxtNumeroCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -229,12 +231,14 @@ public class FrmApresentacao extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BtnAdapS)
-                            .addComponent(BtnAdapN))))
+                            .addComponent(BtnAdapN))
+                        .addGap(57, 57, 57))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSalvarApresent)
                     .addComponent(jButton2)
-                    .addComponent(jBtnCandidato1))
+                    .addComponent(BtnAvalia))
                 .addContainerGap())
         );
 
@@ -258,7 +262,7 @@ public class FrmApresentacao extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Escolha sim ou não para Adaptado.");
         }
         Musica mus = new Musica(TxtAutor.getText(), TxtGenero.getText(), Integer.parseInt(TxtTempo.getText()), TxtNomeMusica.getText()); 
-        Apresentacao apr = new Apresentacao(auto, adapt, SCandidato.getInstance().getCandidatos().get(Integer.parseInt(TxtNumeroCandidato.getText())), mus);
+        Apresentacao apr = new Apresentacao(auto, adapt, SCandidato.getInstance().getCandidatos().get((SCandidato.getInstance().getCandidatos().size())), mus);
         SApresentacao.getInstance().getApresentacoes().add(apr);
         
         
@@ -266,15 +270,27 @@ public class FrmApresentacao extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSalvarApresentActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String listaCandidatos = " ";
+       /* String listaCandidatos = " ";
         for (Candidato candidato : SCandidato.getInstance().getCandidatos()) {
             listaCandidatos += SCandidato.getInstance().getCandidatos().indexOf(candidato) + "- " + candidato.getNome() + "\n";  } 
         JOptionPane.showMessageDialog(this, listaCandidatos);
+        
+        */
+       
+         Cadastro cadastro = new Cadastro();
+        cadastro.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-setVisible(false);       
+setVisible(false);  
+      
+       
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void BtnAvaliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAvaliaActionPerformed
+FrmAvaliacao avalia = new FrmAvaliacao();
+avalia.setVisible(true);
+    }//GEN-LAST:event_BtnAvaliaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,17 +332,16 @@ setVisible(false);
     private javax.swing.JRadioButton BtnAdapS;
     private javax.swing.JRadioButton BtnAutoN;
     private javax.swing.JRadioButton BtnAutoS;
+    private javax.swing.JButton BtnAvalia;
     private javax.swing.JButton BtnSalvarApresent;
     private javax.swing.JTextField TxtAutor;
     private javax.swing.JTextField TxtGenero;
     private javax.swing.JTextField TxtNomeMusica;
-    private javax.swing.JTextField TxtNumeroCandidato;
     private javax.swing.JTextField TxtTempo;
-    private javax.swing.JButton jBtnCandidato1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
